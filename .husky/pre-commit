@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
+
+#DO NOT REMOVE
+export NODE_OPTIONS=--max_old_space_size=8096
+
+echo "\n\n${BLUE}------ Running Husky: ------${END}"
+nvm use $(cat $(git rev-parse --show-toplevel)/.nvmrc)
+
+echo "\n\n${BLUE}------ Validate branch name format: ------${END}"
+npx validate-branch-name
+
+echo "\n\n${BLUE}------ Linting: ------${END}"
+npx lint-staged

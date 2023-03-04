@@ -1,0 +1,27 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
+
+REPO=$(git config --get remote.origin.url)
+BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+PR_URL="-"
+BRANCH_URL="-"
+REMOTE_BRANCH_EXISTS=$(git ls-remote --heads "$REPO" "$BRANCH" | wc -l)
+GIT_MESSAGE=$(git show -s --format=%s)
+
+# Validations
+echo "\n\n${BLUE}------ Running Husky: ------${END}"
+nvm use $(cat $(git rev-parse --show-toplevel)/.nvmrc)
+echo "\n\n${BLUE}------ Validate branch name format: ------${END}"
+npx validate-branch-name
+echo "\n\n${BLUE}------ Run unit tests: ------${END}"
+npm run test:ci
+
+# Show remote branch/PR link 
+if [ "$REMOTE_BRANCH_EXISTS" -eq 1 ] ; then
+  echo "\n\n${GREEN}🤖 View branch:${END}"
+  echo "$BRANCH_URL"
+else
+  echo "\n${GREEN}🎉 Create a PR:${END}"
+  echo "$PR_URL"
+fi
