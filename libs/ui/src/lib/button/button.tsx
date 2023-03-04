@@ -1,16 +1,11 @@
-import { VariantProps } from 'class-variance-authority';
 import { ComponentProps } from 'react';
+
+import { VariantProps } from 'class-variance-authority';
+
 import buttonStyles from './button.styles';
 
-export interface Props
-  extends ComponentProps<'button'>,
-    VariantProps<typeof buttonStyles> {}
+export interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof buttonStyles> {}
 
-export const Button = ({ intent, fullWidth, outline, ...props }: Props) => {
-  return (
-    <button
-      className={buttonStyles({ intent, fullWidth, outline })}
-      {...props}
-    />
-  );
+export const Button: React.FC<ButtonProps> = ({ variant, fullWidth, outline, ...props }) => {
+  return <button className={buttonStyles({ variant, fullWidth, outline })} {...props} />;
 };

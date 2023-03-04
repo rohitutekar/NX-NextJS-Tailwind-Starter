@@ -4,7 +4,7 @@ export default cva(
   'flex items-center justify-center px-6 py-2 rounded font-medium focus:outline-none focus:ring-4 disabled:opacity-60 disabled:pointer-events-none hover:bg-opacity-80',
   {
     variants: {
-      intent: {
+      variant: {
         brand: 'bg-brand text-white',
         primary: 'bg-primary text-white',
         secondary: 'bg-secondary text-white',
@@ -20,15 +20,15 @@ export default cva(
       },
     },
     compoundVariants: [
-      { intent: ['brand'], outline: true, class: 'text-brand' },
-      { intent: ['primary'], outline: true, class: 'text-primary' },
-      { intent: ['secondary'], outline: true, class: 'text-secondary' },
-      { intent: ['success'], outline: true, class: 'text-success' },
-      { intent: ['danger'], outline: true, class: 'text-danger' },
-      { intent: ['warning'], outline: true, class: 'text-warning' },
+      { variant: ['brand'], outline: true, class: 'text-brand' },
+      { variant: ['primary'], outline: true, class: 'text-primary' },
+      { variant: ['secondary'], outline: true, class: 'text-secondary' },
+      { variant: ['success'], outline: true, class: 'text-success' },
+      { variant: ['danger'], outline: true, class: 'text-danger' },
+      { variant: ['warning'], outline: true, class: 'text-warning' },
     ],
     defaultVariants: {
-      intent: 'brand',
+      variant: 'brand',
     },
-  }
+  },
 );

@@ -6,52 +6,43 @@ export default {
   title: 'UI/Alert',
   component: Alert,
   argTypes: {
-    intent: {
+    variant: {
       control: {
         type: 'select',
-        options: [
-          'brand',
-          'primary',
-          'secondary',
-          'success',
-          'danger',
-          'warning',
-        ],
+        options: ['brand', 'primary', 'secondary', 'success', 'danger', 'warning'],
       },
     },
   },
 } as ComponentMeta<typeof Alert>;
 
-const Template: ComponentStory<typeof Alert> = (args) => (
-  <Alert {...args}>Alert</Alert>
-);
+const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args}>Alert</Alert>;
 
 export const Brand = Template.bind({});
 Brand.args = {
-  intent: 'brand',
+  variant: 'brand',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  intent: 'primary',
+  variant: 'primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  intent: 'secondary',
+  variant: 'secondary',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  intent: 'success',
+  variant: 'success',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  intent: 'danger',
+  variant: 'danger',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  intent: 'warning',
+  variant: 'warning',
 };

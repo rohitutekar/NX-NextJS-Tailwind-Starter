@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export default cva('border-l-4 p-4', {
   variants: {
-    intent: {
+    variant: {
       brand: 'bg-brand-light border-brand',
       primary: 'bg-primary-light border-primary text-white',
       secondary: 'bg-secondary-light border-secondary text-white',
@@ -12,6 +12,6 @@ export default cva('border-l-4 p-4', {
     },
   },
   defaultVariants: {
-    intent: 'brand',
+    variant: 'brand',
   },
 });

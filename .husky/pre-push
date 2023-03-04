@@ -15,7 +15,7 @@ nvm use $(cat $(git rev-parse --show-toplevel)/.nvmrc)
 echo "\n\n${BLUE}------ Validate branch name format: ------${END}"
 npx validate-branch-name
 echo "\n\n${BLUE}------ Run unit tests: ------${END}"
-npm run test:ci
+npm run test:all
 
 # Show remote branch/PR link 
 if [ "$REMOTE_BRANCH_EXISTS" -eq 1 ] ; then
