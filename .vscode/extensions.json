@@ -3,6 +3,8 @@
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
+    "aaron-bond.better-comments",
+    "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint"
   ]
 }
