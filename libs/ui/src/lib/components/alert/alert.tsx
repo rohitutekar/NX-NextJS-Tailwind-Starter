@@ -4,9 +4,9 @@ import alertStyles from './alert.styles';
 
 export type AlertProps = VariantProps<typeof alertStyles>;
 
-export const Alert = ({ variant, ...props }: AlertProps) => {
+export const Alert = ({ intent, ...props }: AlertProps) => {
   return (
-    <div className={alertStyles({ variant })} role="alert" {...props}>
+    <div className={alertStyles({ intent })} role="alert" {...props}>
       <p className="font-bold">Be Warned</p>
       <p>Something not ideal might be happening.</p>
     </div>

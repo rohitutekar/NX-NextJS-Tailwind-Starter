@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
-import { AccordionItem, AccordionItemProps } from './parts/item';
+import { AccordionItemProps, AccordionProps } from '../../types/accordion';
+import { AccordionItem } from './parts/item';
 
-export interface AccordionProps {
-  items: Array<AccordionItemProps>;
-}
-
-export const Accordion: React.FC<AccordionProps> = ({ items }) => {
+export const Accordion: React.FC<AccordionProps> = ({
+  items,
+  onSelect = null,
+  alwaysOpen = false,
+  defaultActiveKey = '',
+}) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (

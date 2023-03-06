@@ -6,6 +6,15 @@ import buttonStyles from './button.styles';
 
 export interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof buttonStyles> {}
 
-export const Button: React.FC<ButtonProps> = ({ variant, fullWidth, outline, ...props }) => {
-  return <button className={buttonStyles({ variant, fullWidth, outline })} {...props} />;
+export const Button: React.FC<ButtonProps> = ({
+  intent,
+  size,
+  rounded,
+  fullWidth,
+  outline,
+  ...props
+}) => {
+  return (
+    <button className={buttonStyles({ intent, size, rounded, fullWidth, outline })} {...props} />
+  );
 };

@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { AccordionItemProps } from '../../types/accordion';
 import { Accordion } from './accordion';
-import { AccordionItemProps } from './parts/item';
 
 export default {
   title: 'UI/Accordion',
@@ -33,4 +33,4 @@ const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args
 export const Default = Template.bind({});
 Default.args = { items };
 
-Default.storyName = 'Accordion Component';
+Default.storyName = 'Default Layout';

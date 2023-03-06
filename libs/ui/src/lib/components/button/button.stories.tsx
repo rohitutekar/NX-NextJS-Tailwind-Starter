@@ -6,16 +6,28 @@ export default {
   title: 'UI/Button',
   component: Button,
   argTypes: {
-    variant: {
+    intent: {
       control: {
         type: 'select',
         options: ['brand', 'primary', 'secondary', 'success', 'danger', 'warning'],
       },
     },
-    fullWidth: {
+    size: {
+      control: {
+        type: 'select',
+        options: ['sm', 'md', 'lg'],
+      },
+    },
+    rounded: {
       type: 'boolean',
     },
     outline: {
+      type: 'boolean',
+    },
+    fullWidth: {
+      type: 'boolean',
+    },
+    disabled: {
       type: 'boolean',
     },
   },
@@ -25,30 +37,30 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Butt
 
 export const Brand = Template.bind({});
 Brand.args = {
-  variant: 'brand',
+  intent: 'brand',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variant: 'primary',
+  intent: 'primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  variant: 'secondary',
+  intent: 'secondary',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  variant: 'success',
+  intent: 'success',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  variant: 'danger',
+  intent: 'danger',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  variant: 'warning',
+  intent: 'warning',
 };
